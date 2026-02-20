@@ -1,21 +1,67 @@
-# React + TypeScript + Vite
+# 🚀 Portfolio - Airlon Filho
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio pessoal desenvolvido com React, TypeScript e Tailwind CSS, apresentando um design moderno em Bento Grid com animações fluidas.
 
-While this project uses React, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+## 👨‍💻 Sobre
 
-## Deploy Your Own
+Sou Full Stack Developer com foco em Angular e Spring Boot, atualmente trabalhando na Capgemini. Este portfolio apresenta meus principais projetos e formas de contato.
 
-Deploy your own Vite project with Vercel.
+## ✨ Características
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/framework-boilerplates/vite-react&template=vite-react)
+- 🎨 Design moderno em Bento Grid
+- 🌈 Gradientes e animações suaves com Framer Motion
+- 📱 Totalmente responsivo (mobile-first)
+- ⚡ Performance otimizada com Vite
+- 🎯 Integração com GitHub API para dados dinâmicos
 
-_Live Example: https://vite-react-example.vercel.app_
+## 🛠️ Tecnologias
 
-### Deploying From Your Terminal
+- **React** - Biblioteca UI
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Estilização
+- **Framer Motion** - Animações
+- **Lucide React** - Ícones
+- **Vite** - Build tool
 
-You can deploy your new Vite project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
+## 🚀 Projetos em Destaque
 
-```shell
-$ vercel
+### [Concurseia](https://github.com/airlonfilho/concurseia)
+SaaS com IA para auxiliar na preparação para concursos públicos.
+- Next.js
+- Inteligência Artificial
+
+### [Psicoagenda](https://github.com/airlonfilho/psicoagenda)
+Sistema de agendamento para profissionais de psicologia.
+- TypeScript
+- React
+
+## 📦 Instalação e Uso
+
+```bash
+# Clone o repositório
+git clone https://github.com/airlonfilho/airlonfilhodev.git
+
+# Entre na pasta
+cd airlonfilhodev
+
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
 ```
+
+## 🌐 Links
+
+- **Portfolio:** [airlonfilho.dev](https://airlonfilho.dev)
+- **GitHub:** [@airlonfilho](https://github.com/airlonfilho)
+- **LinkedIn:** [airlonfilho](https://linkedin.com/in/airlonfilho)
+- **Instagram:** [@airlonfilho](https://instagram.com/airlonfilho)
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
+
+---
+
+Desenvolvido com 💜 por Airlon Filho
