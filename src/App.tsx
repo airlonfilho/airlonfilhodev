@@ -88,43 +88,11 @@ export default function App() {
       </motion.header>
 
       <div className="bio-shell" id="top">
-        <section className="profile-column">
-          <motion.div className="profile-card" {...reveal} transition={{ ...reveal.transition, delay: 0.08 }}>
-            <div className="profile-topline">
-              <span className="available"><i /> Disponível para projetos</span>
-              <span className="profile-index">01 / BIO</span>
-            </div>
-
-            <div className="portrait-wrap">
-              <div className="portrait-ring">
-                <img src="https://avatars.githubusercontent.com/u/32520985?v=4" alt="Airlon Filho" />
-              </div>
-              <div className="portrait-badge"><Code2 size={16} /></div>
-            </div>
-
-            <div className="profile-copy">
-              <div className="eyebrow"><span /> Olá, eu sou</div>
-              <h1>Airlon<br /><em>Filho.</em></h1>
-              <p>
-                Desenvolvedor full stack que transforma ideias em sites e sistemas claros, rápidos e feitos para gerar resultado.
-              </p>
-              <div className="location"><MapPin size={14} /> Ceará, Brasil</div>
-            </div>
-
-            <div className="profile-skills">
-              <span>Angular</span>
-              <span>React</span>
-              <span>Spring Boot</span>
-              <span>TypeScript</span>
-            </div>
-          </motion.div>
-        </section>
-
         <section className="content-column">
-          <motion.div className="intro-block" {...reveal} transition={{ ...reveal.transition, delay: 0.15 }}>
+          <motion.div className="intro-block" {...reveal} transition={{ ...reveal.transition, delay: 0.08 }}>
             <div className="section-label">Links principais</div>
-            <h2>Ideias digitais que<br /><em>movem negócios.</em></h2>
-            <p>Escolha por onde quer começar.</p>
+            <h2>Escolha por onde<br /><em>quer começar.</em></h2>
+            <p>Todos os meus links importantes, em um só lugar.</p>
           </motion.div>
 
           <div className="link-list">
@@ -176,6 +144,38 @@ export default function App() {
                   </div>
                 </a>
               ))}
+            </div>
+          </motion.div>
+        </section>
+
+        <section className="profile-column">
+          <motion.div className="profile-card" {...reveal} transition={{ ...reveal.transition, delay: 0.58 }}>
+            <div className="profile-topline">
+              <span className="available"><i /> Disponível para projetos</span>
+              <span className="profile-index">03 / SOBRE</span>
+            </div>
+
+            <div className="portrait-wrap">
+              <div className="portrait-ring">
+                <img src="https://avatars.githubusercontent.com/u/32520985?v=4" alt="Airlon Filho" />
+              </div>
+              <div className="portrait-badge"><Code2 size={16} /></div>
+            </div>
+
+            <div className="profile-copy">
+              <div className="eyebrow"><span /> Por trás dos projetos</div>
+              <h1>Airlon <em>Filho.</em></h1>
+              <p>
+                Desenvolvedor full stack que transforma ideias em sites e sistemas claros, rápidos e feitos para gerar resultado.
+              </p>
+              <div className="location"><MapPin size={14} /> Ceará, Brasil</div>
+            </div>
+
+            <div className="profile-skills">
+              <span>Angular</span>
+              <span>React</span>
+              <span>Spring Boot</span>
+              <span>TypeScript</span>
             </div>
           </motion.div>
         </section>
