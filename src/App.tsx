@@ -32,7 +32,7 @@ const services = [
     number: '01',
     icon: MousePointer2,
     title: 'Sites que vendem',
-    text: 'Landing pages e sites institucionais rápidos, responsivos e pensados para transformar visitas em conversas.',
+    text: 'Landing pages e sites institucionais rápidos e responsivos, criados para transformar visitantes em clientes.',
     items: ['Copy estratégica', 'Design responsivo', 'SEO e performance'],
   },
   {
@@ -134,24 +134,21 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="eyebrow"><span /> Sites & sistemas sob medida</div>
+          <div className="eyebrow"><span /> +5 anos criando sites & sistemas sob medida</div>
           <h1>
-            Ideias digitais que<br />
-            <em>movem negócios.</em>
+            Sites e sistemas que<br />
+            <em>vendem por você.</em>
           </h1>
           <p>
-            Eu projeto e desenvolvo experiências digitais que ajudam sua empresa a vender mais, organizar processos e crescer com tecnologia.
+            Projeto e desenvolvo experiências digitais sob medida para pequenos negócios e empresas que querem vender mais, organizar processos e crescer com tecnologia confiável.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">
-              Quero tirar minha ideia do papel <ArrowRight size={18} />
+              Quero meu site ou sistema <ArrowRight size={18} />
             </a>
             <a className="button button-ghost" href="#projetos">
               Ver projetos <ArrowDown size={17} />
             </a>
-          </div>
-          <div className="availability">
-            <span className="status-dot" /> Agenda aberta para novos projetos
           </div>
         </motion.div>
 
@@ -191,14 +188,13 @@ function App() {
           <div className="floating-chip chip-two"><Gauge size={15} /> Alta performance</div>
         </motion.div>
 
-        <div className="hero-index" aria-hidden="true">01 / 06</div>
       </section>
 
       <section className="proof-strip" aria-label="Diferenciais">
-        <div><strong>100%</strong><span>sob medida</span></div>
-        <div><strong>1:1</strong><span>contato direto</span></div>
+        <div><strong>+5 anos</strong><span>de experiência</span></div>
+        <div><strong>1:1</strong><span>contato direto comigo</span></div>
         <div><strong>Full stack</strong><span>do design ao deploy</span></div>
-        <div><strong>Responsivo</strong><span>em qualquer tela</span></div>
+        <div><strong>Bancos & consultorias</strong><span>padrão de mercado</span></div>
       </section>
 
       <section className="intro section-shell">
@@ -213,8 +209,8 @@ function App() {
           </p>
           <div className="benefit-list">
             <span><Check size={16} /> Menos tarefas manuais</span>
-            <span><Check size={16} /> Mais oportunidades de venda</span>
-            <span><Check size={16} /> Uma presença digital profissional</span>
+            <span><Check size={16} /> Mais vendas e oportunidades</span>
+            <span><Check size={16} /> Uma presença digital que gera confiança</span>
           </div>
         </motion.div>
       </section>
@@ -320,15 +316,15 @@ function App() {
         <motion.div className="why-copy" {...fadeUp}>
           <div className="section-kicker">Por que trabalhar comigo</div>
           <h2>Seu projeto tratado como <em>negócio</em>, não como tarefa.</h2>
-          <p>Você fala direto com quem pensa, desenha e desenvolve. Isso deixa as decisões mais rápidas e o resultado mais consistente.</p>
+          <p>Você fala direto com quem pensa, desenha e desenvolve — sem agência, sem intermediários. São mais de 5 anos de experiência em consultorias e bancos, aplicados ao seu projeto com o mesmo padrão de qualidade.</p>
           <a href={whatsappUrl} target="_blank" rel="noreferrer">Vamos conversar <ArrowRight size={17} /></a>
         </motion.div>
         <div className="why-grid">
           {[
             [Sparkles, 'Visão de produto', 'Cada escolha parte do resultado que você quer alcançar.'],
-            [Code2, 'Qualidade técnica', 'Código organizado para evoluir sem virar um problema amanhã.'],
+            [Code2, 'Qualidade técnica', 'Código no padrão que aprendi em bancos e consultorias, pronto para crescer sem virar dor de cabeça.'],
             [MessageCircle, 'Comunicação direta', 'Conversa clara, acompanhamento próximo e nenhuma enrolação.'],
-            [ShieldCheck, 'Entrega confiável', 'Testes, segurança e atenção aos detalhes antes de publicar.'],
+            [ShieldCheck, 'Entrega confiável', 'Segurança e testes no nível que o mercado financeiro exige, antes de qualquer publicação.'],
           ].map(([Icon, title, text], index) => {
             const WhyIcon = Icon as typeof Sparkles
             return (
@@ -387,7 +383,7 @@ function App() {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Airlon Filho</span>
-          <span>Desenvolvido com propósito no Ceará, Brasil.</span>
+          
         </div>
         <div className="footer-word" aria-hidden="true">AIRLON</div>
       </footer>
