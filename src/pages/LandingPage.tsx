@@ -60,7 +60,6 @@ const projects = [
     accent: 'project-orange',
     tag: 'Sistema web',
     image: '/teragestao.png',
-    href: 'https://gestao.teramarketingeconteudo.com.br/landing',
   },
   {
     category: 'Plataforma • Marketing de influência',
@@ -69,7 +68,6 @@ const projects = [
     accent: 'project-light',
     tag: 'Produto digital',
     image: '/hitlab.png',
-    href: 'https://hitlab.app.br/',
   },
 ]
 
@@ -285,15 +283,7 @@ function LandingPage() {
         </motion.div>
         <div className="project-grid">
           {projects.map((project, index) => (
-            <motion.a
-              className={`project-card ${project.accent}`}
-              href={project.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Conhecer o projeto ${project.title}`}
-              key={project.title}
-              {...fadeUp}
-            >
+            <motion.article className={`project-card ${project.accent}`} key={project.title} {...fadeUp}>
               <div className="project-info">
                 <span>{project.category}</span>
                 <h3>{project.title}</h3>
@@ -323,7 +313,7 @@ function LandingPage() {
                 )}
                 <span className="project-number">0{index + 1}</span>
               </div>
-            </motion.a>
+            </motion.article>
           ))}
         </div>
       </section>
@@ -393,7 +383,6 @@ function LandingPage() {
           <div className="footer-links">
             <a href="#servicos">Serviços</a>
             <a href="#projetos">Projetos</a>
-            <a href="/bio">Bio e links</a>
             <a href="https://github.com/airlonfilho" target="_blank" rel="noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/airlonfilho" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
