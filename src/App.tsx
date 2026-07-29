@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 import {
   ArrowDownRight,
   ArrowRight,
@@ -41,7 +42,7 @@ const links = [
   {
     title: 'Instagram',
     label: 'Bastidores e rotina',
-    href: 'https://instagram.com/airlonfilho',
+    href: 'https://instagram.com/airlonfilhodev',
     icon: Instagram,
   },
 ]
@@ -49,17 +50,17 @@ const links = [
 const projects = [
   {
     number: '01',
-    title: 'Concurseia',
-    description: 'SaaS com IA para tornar a preparação para concursos mais inteligente.',
-    tech: 'Next.js • IA',
-    href: 'https://github.com/airlonfilho/concurseia',
+    title: 'Hitlab',
+    description: 'Campanhas musicais que conectam artistas, bandas e creators.',
+    tech: 'Plataforma • Music Tech',
+    href: 'https://hitlab.app.br/',
   },
   {
     number: '02',
-    title: 'Psicoagenda',
-    description: 'Sistema de agendamento e gestão para profissionais de psicologia.',
-    tech: 'React • TypeScript',
-    href: 'https://github.com/airlonfilho/psicoagenda',
+    title: 'Tera Gestão',
+    description: 'Plataforma de gestão criada para organizar processos e resultados.',
+    tech: 'Sistema • Gestão',
+    href: 'https://gestao.teramarketingeconteudo.com.br/landing',
   },
 ]
 
@@ -69,7 +70,11 @@ const reveal = {
   transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
 }
 
-export default function App() {
+function BioPage() {
+  useEffect(() => {
+    document.title = 'Airlon Filho — Bio & Links'
+  }, [])
+
   return (
     <main className="bio-page">
       <div className="noise" aria-hidden="true" />
@@ -81,8 +86,8 @@ export default function App() {
         <a className="brand" href="#top" aria-label="Airlon Filho — início">
           AF<span>.</span>
         </a>
-        <span className="header-label">Designer & Developer</span>
-        <a className="header-cta" href="https://airlonfilho.dev" target="_blank" rel="noreferrer">
+        <span className="header-label"></span>
+        <a className="header-cta" href="/">
           Ver site completo <ArrowRight size={15} />
         </a>
       </motion.header>
@@ -152,7 +157,7 @@ export default function App() {
           <motion.div className="profile-card" {...reveal} transition={{ ...reveal.transition, delay: 0.58 }}>
             <div className="profile-topline">
               <span className="available"><i /> Disponível para projetos</span>
-              <span className="profile-index">03 / SOBRE</span>
+              <span className="profile-index"></span>
             </div>
 
             <div className="portrait-wrap">
@@ -187,4 +192,57 @@ export default function App() {
       </motion.footer>
     </main>
   )
+}
+
+function LandingPage() {
+  useEffect(() => {
+    document.title = 'Airlon Filho — Desenvolvedor Full Stack'
+  }, [])
+
+  return (
+    <main className="landing-page">
+      <div className="noise" aria-hidden="true" />
+      <div className="bio-grid" aria-hidden="true" />
+      <div className="glow glow-one" aria-hidden="true" />
+      <div className="glow glow-two" aria-hidden="true" />
+
+      <motion.header className="bio-header landing-header" {...reveal}>
+        <a className="brand" href="/" aria-label="Airlon Filho — início">
+          AF<span>.</span>
+        </a>
+        <a className="header-cta" href="/bio">
+          Link na bio <ArrowRight size={15} />
+        </a>
+      </motion.header>
+
+      <motion.section className="landing-hero" {...reveal} transition={{ ...reveal.transition, delay: 0.08 }}>
+        <div className="section-label">Desenvolvimento full stack</div>
+        <h1>
+          Sites e sistemas que transformam ideias em <em>resultado.</em>
+        </h1>
+        <p>
+          Soluções digitais claras, rápidas e feitas sob medida para o seu negócio.
+        </p>
+        <div className="landing-actions">
+          <a
+            className="landing-primary"
+            href="https://wa.me/5588996644768?text=Olá%2C%20Airlon!%20Quero%20conversar%20sobre%20um%20projeto."
+            target="_blank"
+            rel="noreferrer"
+          >
+            Vamos conversar <ArrowDownRight size={18} />
+          </a>
+          <a className="landing-secondary" href="/bio">
+            Ver todos os links <ArrowRight size={17} />
+          </a>
+        </div>
+      </motion.section>
+    </main>
+  )
+}
+
+export default function App() {
+  const path = window.location.pathname.replace(/\/+$/, '') || '/'
+
+  return path === '/bio' ? <BioPage /> : <LandingPage />
 }
