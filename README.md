@@ -25,15 +25,19 @@ Sou Full Stack Developer com foco em Angular e Spring Boot, atualmente trabalhan
 
 ## 🚀 Projetos em Destaque
 
-### [Concurseia](https://github.com/airlonfilho/concurseia)
-SaaS com IA para auxiliar na preparação para concursos públicos.
+### Tera Gestão
+Sistema de gestão operacional para agências: clientes, tarefas, calendário editorial, aprovação de conteúdo, produção audiovisual, financeiro, contratos, desempenho, arquivos e notificações.
 - Next.js
-- Inteligência Artificial
-
-### [Psicoagenda](https://github.com/airlonfilho/psicoagenda)
-Sistema de agendamento para profissionais de psicologia.
-- TypeScript
 - React
+- Prisma
+- PostgreSQL
+
+### Hitlab
+Plataforma que conecta artistas, bandas e influenciadores/clipadores para campanhas musicais baseadas em performance.
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
 
 ## 📦 Instalação e Uso
 

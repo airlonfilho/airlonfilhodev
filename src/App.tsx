@@ -1,168 +1,403 @@
-import { motion } from 'framer-motion';
-import { 
-  Github, 
-  Linkedin, 
-  MapPin, 
-  Briefcase, 
-  GraduationCap, 
-  Rocket,
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import {
+  ArrowDown,
+  ArrowRight,
+  Check,
+  ChevronDown,
   Code2,
+  Gauge,
+  Layers3,
+  Menu,
   MessageCircle,
-  Instagram,
-  Globe
-} from 'lucide-react';
+  MousePointer2,
+  ShieldCheck,
+  Sparkles,
+  X,
+  Zap,
+} from 'lucide-react'
 
-const BentoBlock = ({ className, children, href }: any) => {
-  const BlockTag = href ? motion.a : motion.div;
-  
-  return (
-    <BlockTag
-      href={href}
-      target={href ? "_blank" : undefined}
-      rel={href ? "noopener noreferrer" : undefined}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      className={`bg-zinc-800/50 border border-zinc-700/50 rounded-3xl p-5 md:p-6 flex flex-col justify-between overflow-hidden shadow-lg backdrop-blur-sm ${className}`}
-    >
-      {children}
-    </BlockTag>
-  );
-};
+const whatsappUrl =
+  'https://wa.me/5588996644768?text=Olá%2C%20Airlon!%20Quero%20conversar%20sobre%20um%20projeto.'
 
-export default function App() {
-  return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 p-4 md:p-6 lg:p-8 font-sans">
-      
-      {/* Grid Principal: 2 colunas no mobile, 6 no desktop */}
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4 w-full auto-rows-[160px] md:auto-rows-[200px]">
-        
-        {/* Bloco 1: Perfil (Ocupa 2 colunas no mobile, 2 no desktop) */}
-        <BentoBlock className="col-span-2 md:col-span-2 row-span-2 flex flex-col justify-end relative">
-          <div className="absolute top-5 left-5 md:top-6 md:left-6 flex space-x-2">
-            <span className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-200 text-xs px-3 py-1 rounded-full flex items-center gap-1.5 font-medium border border-purple-400/30">
-              <Rocket size={12} className="animate-bounce" />
-              Inovando & Criando
-            </span>
-          </div>
-          
-          <div>
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-zinc-700/50 rounded-full mb-3 md:mb-4 border-2 border-zinc-600/50 flex items-center justify-center overflow-hidden">
-              <img src="https://avatars.githubusercontent.com/u/32520985?v=4" alt="Airlon Filho" className="w-full h-full object-cover" />
-            </div>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight mb-1 text-white">Airlon Filho</h1>
-            <p className="text-sm md:text-base text-zinc-300 font-medium mb-4">Full Stack Developer | Angular & Spring Boot</p>
-            
-            <div className="flex flex-col gap-1.5 md:gap-2 text-xs md:text-sm text-zinc-400">
-              <div className="flex items-center gap-2">
-                <Briefcase size={14} className="md:w-4 md:h-4 text-zinc-500" /> Dev na Capgemini
-              </div>
-              <div className="flex items-center gap-2">
-                <GraduationCap size={14} className="md:w-4 md:h-4 text-zinc-500" /> ADS (UFCA)
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin size={14} className="md:w-4 md:h-4 text-zinc-500" /> Brasil
-              </div>
-            </div>
-          </div>
-        </BentoBlock>
-
-        {/* Blocos 2-4: GitHub, LinkedIn, Portfolio (3 na mesma linha) */}
-        <div className="col-span-2 md:col-span-4 grid grid-cols-3 gap-3 md:gap-4">
-          {/* GitHub */}
-          <BentoBlock href="https://github.com/airlonfilho" className="col-span-1 row-span-1 bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 group">
-            <div className="h-full flex flex-col justify-center items-center gap-2">
-              <div className="bg-white/10 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center text-white group-hover:bg-white group-hover:text-zinc-900 transition-colors">
-                <Github size={20} className="md:w-7 md:h-7" />
-              </div>
-              <span className="text-[10px] md:text-sm font-medium text-zinc-300 group-hover:text-white transition-colors text-center">GitHub</span>
-            </div>
-          </BentoBlock>
-
-          {/* LinkedIn */}
-          <BentoBlock href="https://linkedin.com/in/airlonfilho" className="col-span-1 row-span-1 bg-gradient-to-br from-blue-900/20 to-blue-800/20 group border-blue-500/20">
-            <div className="h-full flex flex-col justify-center items-center gap-2">
-              <div className="bg-blue-500/20 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center text-blue-300 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                <Linkedin size={20} className="md:w-7 md:h-7" />
-              </div>
-              <span className="text-[10px] md:text-sm font-medium text-zinc-300 group-hover:text-white transition-colors text-center">LinkedIn</span>
-            </div>
-          </BentoBlock>
-
-          {/* Portfolio */}
-          <BentoBlock href="https://airlonfilho.dev" className="col-span-1 row-span-1 bg-gradient-to-br from-emerald-900/20 to-emerald-800/20 group border-emerald-500/20">
-            <div className="h-full flex flex-col justify-center items-center gap-2">
-              <div className="bg-emerald-500/20 w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center text-emerald-300 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-                <Globe size={20} className="md:w-7 md:h-7" />
-              </div>
-              <span className="text-[10px] md:text-sm font-medium text-zinc-300 group-hover:text-white transition-colors text-center">Portfolio</span>
-            </div>
-          </BentoBlock>
-        </div>
-
-        {/* Bloco 5: WhatsApp */}
-        <BentoBlock href="https://wa.me/5588996644768" className="col-span-1 md:col-span-2 row-span-1 bg-gradient-to-br from-green-900/20 to-green-800/20 group relative overflow-hidden border-green-500/20">
-          <div className="absolute -right-2 -bottom-2 md:-right-4 md:-bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
-            <MessageCircle size={80} className="md:w-[100px] md:h-[100px]" />
-          </div>
-          
-          <div className="relative z-10 flex flex-col h-full justify-between">
-            <div className="bg-green-500/20 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-green-300 group-hover:bg-green-500 group-hover:text-white transition-colors">
-              <MessageCircle size={16} className="md:w-5 md:h-5" />
-            </div>
-            <div>
-              <h3 className="font-bold text-base md:text-lg text-white">WhatsApp</h3>
-              <p className="text-[10px] md:text-sm text-zinc-300 font-medium leading-tight">Contato direto</p>
-            </div>
-          </div>
-        </BentoBlock>
-
-        {/* Bloco 6: Instagram */}
-        <BentoBlock href="https://instagram.com/airlonfilho" className="col-span-1 md:col-span-2 row-span-1 bg-gradient-to-br from-pink-900/20 to-purple-900/20 group relative overflow-hidden border-pink-500/20">
-          <div className="absolute -right-2 -bottom-2 md:-right-4 md:-bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
-            <Instagram size={80} className="md:w-[100px] md:h-[100px]" />
-          </div>
-          
-          <div className="relative z-10 flex flex-col h-full justify-between">
-            <div className="bg-gradient-to-br from-pink-500/20 to-purple-500/20 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-pink-300 group-hover:from-pink-500 group-hover:to-purple-500 group-hover:text-white transition-all">
-              <Instagram size={16} className="md:w-5 md:h-5" />
-            </div>
-            <div>
-              <h3 className="font-bold text-base md:text-lg text-white">Instagram</h3>
-              <p className="text-[10px] md:text-sm text-zinc-300 font-medium leading-tight">Siga-me</p>
-            </div>
-          </div>
-        </BentoBlock>
-
-        {/* Bloco 7: Concurseia */}
-        <BentoBlock href="https://github.com/airlonfilho/concurseia" className="col-span-2 md:col-span-3 row-span-1 group">
-          <div className="flex items-start justify-between">
-            <div className="bg-purple-500/20 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mb-2 md:mb-4 text-purple-300 group-hover:bg-purple-500 group-hover:text-white transition-colors">
-              <Code2 size={16} className="md:w-5 md:h-5" />
-            </div>
-            <span className="text-[10px] md:text-xs font-mono text-zinc-300 bg-zinc-900/80 px-2 py-1 rounded-md">Next.js • IA</span>
-          </div>
-          <div>
-            <h3 className="font-semibold text-base md:text-lg text-white">Concurseia</h3>
-            <p className="text-xs md:text-sm text-zinc-300 mt-1 line-clamp-2">SaaS com IA para auxiliar na preparação para concursos públicos.</p>
-          </div>
-        </BentoBlock>
-
-        {/* Bloco 8: Psicoagenda */}
-        <BentoBlock href="https://github.com/airlonfilho/psicoagenda" className="col-span-2 md:col-span-3 row-span-1 group">
-          <div className="flex items-start justify-between">
-            <div className="bg-cyan-500/20 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mb-2 md:mb-4 text-cyan-300 group-hover:bg-cyan-500 group-hover:text-white transition-colors">
-              <Code2 size={16} className="md:w-5 md:h-5" />
-            </div>
-            <span className="text-[10px] md:text-xs font-mono text-zinc-300 bg-zinc-900/80 px-2 py-1 rounded-md">TypeScript • React</span>
-          </div>
-          <div>
-            <h3 className="font-semibold text-base md:text-lg text-white">Psicoagenda</h3>
-            <p className="text-xs md:text-sm text-zinc-300 mt-1 line-clamp-2">Sistema de agendamento para profissionais de psicologia.</p>
-          </div>
-        </BentoBlock>
-
-      </div>
-    </div>
-  );
+const fadeUp = {
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-80px' },
+  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
 }
+
+const services = [
+  {
+    number: '01',
+    icon: MousePointer2,
+    title: 'Sites que vendem',
+    text: 'Landing pages e sites institucionais rápidos e responsivos, criados para transformar visitantes em clientes.',
+    items: ['Copy estratégica', 'Design responsivo', 'SEO e performance'],
+  },
+  {
+    number: '02',
+    icon: Layers3,
+    title: 'Sistemas sob medida',
+    text: 'Soluções web desenhadas em torno do seu processo, para reduzir retrabalho e dar escala à operação.',
+    items: ['Painéis administrativos', 'Automação de processos', 'Integrações e APIs'],
+  },
+  {
+    number: '03',
+    icon: Zap,
+    title: 'Evolução de produtos',
+    text: 'Melhorias técnicas e visuais para produtos digitais que precisam crescer com segurança e velocidade.',
+    items: ['Novas funcionalidades', 'Modernização de interface', 'Otimização técnica'],
+  },
+]
+
+const projects = [
+  {
+    category: 'Sistema • Gestão operacional',
+    title: 'Tera Gestão',
+    description: 'Sistema de gestão operacional para agências, reunindo clientes, tarefas, calendário editorial, aprovação de conteúdo, produção audiovisual, financeiro, contratos, desempenho, arquivos e notificações em um só lugar.',
+    accent: 'project-orange',
+    tag: 'Sistema web',
+    image: '/teragestao.png',
+  },
+  {
+    category: 'Plataforma • Marketing de influência',
+    title: 'Hitlab',
+    description: 'Plataforma que conecta artistas, bandas e influenciadores para campanhas musicais baseadas em performance, com validação de clips, acompanhamento de campanhas, pagamentos e métricas em tempo real.',
+    accent: 'project-light',
+    tag: 'Produto digital',
+    image: '/hitlab.png',
+  },
+]
+
+const faqs = [
+  {
+    question: 'Quanto custa desenvolver um projeto?',
+    answer: 'O investimento depende do escopo, das integrações e do prazo. Depois de uma conversa breve, você recebe uma proposta clara com etapas, entregáveis e valores — sem surpresas.',
+  },
+  {
+    question: 'Quanto tempo leva para ficar pronto?',
+    answer: 'Uma landing page costuma levar até 7 dias. Sistemas e projetos maiores têm cronograma definido após o levantamento do escopo.',
+  },
+  {
+    question: 'Você também cuida do design?',
+    answer: 'Sim. O projeto inclui a experiência, a interface e o desenvolvimento. Você não precisa coordenar profissionais diferentes para tirar a ideia do papel.',
+  },
+]
+
+function Nav() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <header className="nav-wrap">
+      <a className="brand" href="#inicio" aria-label="Airlon Filho — início">
+        AF<span>.</span>
+      </a>
+      <nav className={open ? 'nav-links open' : 'nav-links'} aria-label="Navegação principal">
+        <a href="#servicos" onClick={() => setOpen(false)}>Serviços</a>
+        <a href="#projetos" onClick={() => setOpen(false)}>Projetos</a>
+        <a href="#processo" onClick={() => setOpen(false)}>Processo</a>
+        <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
+      </nav>
+      <a className="nav-cta" href={whatsappUrl} target="_blank" rel="noreferrer">
+        Falar sobre um projeto <ArrowRight size={16} />
+      </a>
+      <button
+        className="menu-button"
+        aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+      >
+        {open ? <X /> : <Menu />}
+      </button>
+    </header>
+  )
+}
+
+function App() {
+  const [activeFaq, setActiveFaq] = useState<number | null>(0)
+
+  return (
+    <main>
+      <div className="noise" aria-hidden="true" />
+      <Nav />
+
+      <section className="hero" id="inicio">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="orb orb-one" aria-hidden="true" />
+        <div className="orb orb-two" aria-hidden="true" />
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="eyebrow"><span /> +5 anos criando sites & sistemas sob medida</div>
+          <h1>
+            Sites e sistemas que<br />
+            <em>vendem por você.</em>
+          </h1>
+          <p>
+            Projeto e desenvolvo experiências digitais sob medida para pequenos negócios e empresas que querem vender mais, organizar processos e crescer com tecnologia confiável.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">
+              Quero meu site ou sistema <ArrowRight size={18} />
+            </a>
+            <a className="button button-ghost" href="#projetos">
+              Ver projetos <ArrowDown size={17} />
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="hero-card"
+          initial={{ opacity: 0, scale: 0.92, rotate: 2 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          aria-hidden="true"
+        >
+          <div className="window-bar">
+            <div><i /><i /><i /></div>
+            <span>airlonfilho.dev</span>
+          </div>
+          <div className="mock-ui">
+            <div className="mock-sidebar">
+              <div className="mock-logo">A</div>
+              <div className="mock-line small" />
+              <div className="mock-line" />
+              <div className="mock-line" />
+            </div>
+            <div className="mock-main">
+              <span className="mock-label">VISÃO GERAL</span>
+              <div className="mock-heading" />
+              <div className="metrics">
+                <div><b>+42%</b><span>conversões</span></div>
+                <div><b>2.4x</b><span>mais rápido</span></div>
+              </div>
+              <div className="chart">
+                {[30, 42, 38, 58, 52, 74, 88].map((height, i) => (
+                  <span key={i} style={{ height: `${height}%` }} />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="floating-chip chip-one"><Code2 size={15} /> Código limpo</div>
+          <div className="floating-chip chip-two"><Gauge size={15} /> Alta performance</div>
+        </motion.div>
+
+      </section>
+
+      <section className="proof-strip" aria-label="Diferenciais">
+        <div><strong>+5 anos</strong><span>de experiência</span></div>
+        <div><strong>1:1</strong><span>contato direto comigo</span></div>
+        <div><strong>Full stack</strong><span>do design ao deploy</span></div>
+        <div><strong>Bancos & consultorias</strong><span>padrão de mercado</span></div>
+      </section>
+
+      <section className="intro section-shell">
+        <motion.div className="section-kicker" {...fadeUp}>O que eu resolvo</motion.div>
+        <motion.div className="intro-copy" {...fadeUp}>
+          <h2>Seu negócio não precisa de <span>mais um site.</span></h2>
+          <p>Precisa de uma ferramenta que trabalhe por ele.</p>
+        </motion.div>
+        <motion.div className="intro-detail" {...fadeUp}>
+          <p>
+            Tecnologia só faz sentido quando resolve um problema real. Por isso, cada projeto começa entendendo o seu negócio — e termina com uma solução bonita, rápida e pronta para gerar resultado.
+          </p>
+          <div className="benefit-list">
+            <span><Check size={16} /> Menos tarefas manuais</span>
+            <span><Check size={16} /> Mais vendas e oportunidades</span>
+            <span><Check size={16} /> Uma presença digital que gera confiança</span>
+          </div>
+        </motion.div>
+      </section>
+
+      <section className="services section-shell" id="servicos">
+        <motion.div className="section-heading" {...fadeUp}>
+          <div>
+            <div className="section-kicker">Serviços</div>
+            <h2>Da primeira tela<br />à última linha de código.</h2>
+          </div>
+          <p>Estratégia, design e desenvolvimento reunidos em uma entrega completa.</p>
+        </motion.div>
+
+        <div className="service-grid">
+          {services.map((service, index) => {
+            const Icon = service.icon
+            return (
+              <motion.article
+                className={`service-card ${index === 0 ? 'featured' : ''}`}
+                key={service.title}
+                {...fadeUp}
+                transition={{ ...fadeUp.transition, delay: index * 0.08 }}
+              >
+                <div className="card-top">
+                  <div className="service-icon"><Icon size={22} /></div>
+                  <span>{service.number}</span>
+                </div>
+                <div>
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                  <ul>
+                    {service.items.map((item) => <li key={item}><Check size={14} /> {item}</li>)}
+                  </ul>
+                </div>
+              </motion.article>
+            )
+          })}
+        </div>
+      </section>
+
+      <section className="process section-shell" id="processo">
+        <motion.div className="process-title" {...fadeUp}>
+          <div className="section-kicker light">Processo</div>
+          <h2>Sem complicação.<br /><em>Sem caixa-preta.</em></h2>
+          <p>Você acompanha as decisões e sabe exatamente em qual etapa o projeto está.</p>
+        </motion.div>
+        <div className="process-list">
+          {[
+            ['01', 'Imersão', 'Entendo o cenário, os objetivos e o que a solução precisa entregar.'],
+            ['02', 'Estratégia & design', 'Organizo a experiência e transformo as ideias em uma interface clara.'],
+            ['03', 'Desenvolvimento', 'Construo a solução com tecnologia moderna, segura e escalável.'],
+            ['04', 'Lançamento', 'Testamos, publicamos e deixo tudo pronto para você usar e crescer.'],
+          ].map(([number, title, text], index) => (
+            <motion.div className="process-item" key={number} {...fadeUp} transition={{ ...fadeUp.transition, delay: index * 0.06 }}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              <ArrowRight size={20} />
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="projects section-shell" id="projetos">
+        <motion.div className="section-heading" {...fadeUp}>
+          <div>
+            <div className="section-kicker">Projetos selecionados</div>
+            <h2>Soluções reais.<br /><em>Problemas reais.</em></h2>
+          </div>
+          <p>Produtos digitais pensados para tornar experiências e rotinas mais inteligentes.</p>
+        </motion.div>
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <motion.article className={`project-card ${project.accent}`} key={project.title} {...fadeUp}>
+              <div className="project-info">
+                <span>{project.category}</span>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="project-tag">{project.tag}</div>
+              </div>
+              <div className="project-visual" aria-hidden="true">
+                {project.image ? (
+                  <div className="visual-window project-browser">
+                    <div className="visual-bar"><i /><i /><i /></div>
+                    <img className="project-image" src={project.image} alt="" />
+                  </div>
+                ) : (
+                  <div className="visual-window">
+                    <div className="visual-bar"><i /><i /><i /></div>
+                    <div className="visual-body">
+                      <div className="visual-nav" />
+                      <div className="visual-content">
+                        <div className="visual-title" />
+                        <div className="visual-row">
+                          <div /><div /><div />
+                        </div>
+                        <div className="visual-panel" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <span className="project-number">0{index + 1}</span>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
+      <section className="why section-shell">
+        <motion.div className="why-copy" {...fadeUp}>
+          <div className="section-kicker">Por que trabalhar comigo</div>
+          <h2>Seu projeto tratado como <em>negócio</em>, não como tarefa.</h2>
+          <p>Você fala direto com quem pensa, desenha e desenvolve — sem agência, sem intermediários. São mais de 5 anos de experiência em consultorias e bancos, aplicados ao seu projeto com o mesmo padrão de qualidade.</p>
+          <a href={whatsappUrl} target="_blank" rel="noreferrer">Vamos conversar <ArrowRight size={17} /></a>
+        </motion.div>
+        <div className="why-grid">
+          {[
+            [Sparkles, 'Visão de produto', 'Cada escolha parte do resultado que você quer alcançar.'],
+            [Code2, 'Qualidade técnica', 'Código no padrão que aprendi em bancos e consultorias, pronto para crescer sem virar dor de cabeça.'],
+            [MessageCircle, 'Comunicação direta', 'Conversa clara, acompanhamento próximo e nenhuma enrolação.'],
+            [ShieldCheck, 'Entrega confiável', 'Segurança e testes no nível que o mercado financeiro exige, antes de qualquer publicação.'],
+          ].map(([Icon, title, text], index) => {
+            const WhyIcon = Icon as typeof Sparkles
+            return (
+              <motion.div className="why-card" key={title as string} {...fadeUp} transition={{ ...fadeUp.transition, delay: index * 0.06 }}>
+                <WhyIcon size={22} />
+                <h3>{title as string}</h3>
+                <p>{text as string}</p>
+              </motion.div>
+            )
+          })}
+        </div>
+      </section>
+
+      <section className="faq section-shell" id="faq">
+        <motion.div {...fadeUp}>
+          <div className="section-kicker">Perguntas frequentes</div>
+          <h2>Antes de começar,<br /><em>vale saber.</em></h2>
+        </motion.div>
+        <div className="faq-list">
+          {faqs.map((faq, index) => (
+            <motion.div className={`faq-item ${activeFaq === index ? 'active' : ''}`} key={faq.question} {...fadeUp}>
+              <button onClick={() => setActiveFaq(activeFaq === index ? null : index)} aria-expanded={activeFaq === index}>
+                <span>{faq.question}</span>
+                <ChevronDown size={20} />
+              </button>
+              <div className="faq-answer"><p>{faq.answer}</p></div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="final-cta section-shell" id="contato">
+        <div className="cta-orb" aria-hidden="true" />
+        <motion.div {...fadeUp}>
+          <span className="cta-label">Tem uma ideia em mente?</span>
+          <h2>Vamos construir algo<br /><em>que faça diferença.</em></h2>
+          <p>Me conte o que você precisa. Eu respondo com os próximos passos para transformar sua ideia em uma solução real.</p>
+          <a className="button button-light" href={whatsappUrl} target="_blank" rel="noreferrer">
+            Conversar no WhatsApp <MessageCircle size={18} />
+          </a>
+        </motion.div>
+      </section>
+
+      <footer>
+        <div className="footer-top">
+          <div>
+            <a className="brand footer-brand" href="#inicio">AF<span>.</span></a>
+            <p>Sites e sistemas que movem negócios.</p>
+          </div>
+          <div className="footer-links">
+            <a href="#servicos">Serviços</a>
+            <a href="#projetos">Projetos</a>
+            <a href="https://github.com/airlonfilho" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/airlonfilho" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Airlon Filho</span>
+          
+        </div>
+        <div className="footer-word" aria-hidden="true">AIRLON</div>
+      </footer>
+
+      <a className="whatsapp-float" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Conversar no WhatsApp">
+        <MessageCircle size={22} />
+      </a>
+    </main>
+  )
+}
+
+export default App
