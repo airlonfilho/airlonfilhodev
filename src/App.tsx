@@ -53,18 +53,20 @@ const services = [
 
 const projects = [
   {
-    category: 'SaaS • Inteligência artificial',
-    title: 'Concurseia',
-    description: 'Uma plataforma inteligente para transformar a preparação para concursos em um processo mais claro e eficiente.',
+    category: 'Sistema • Gestão operacional',
+    title: 'Tera Gestão',
+    description: 'Sistema de gestão operacional para agências, reunindo clientes, tarefas, calendário editorial, aprovação de conteúdo, produção audiovisual, financeiro, contratos, desempenho, arquivos e notificações em um só lugar.',
     accent: 'project-orange',
-    tag: 'Produto digital',
+    tag: 'Sistema web',
+    image: '/teragestao.png',
   },
   {
-    category: 'Sistema • Gestão',
-    title: 'Psicoagenda',
-    description: 'Agenda e gestão de atendimentos para profissionais de psicologia, com uma experiência simples do início ao fim.',
+    category: 'Plataforma • Marketing de influência',
+    title: 'Hitlab',
+    description: 'Plataforma que conecta artistas, bandas e influenciadores para campanhas musicais baseadas em performance, com validação de clips, acompanhamento de campanhas, pagamentos e métricas em tempo real.',
     accent: 'project-light',
-    tag: 'Sistema web',
+    tag: 'Produto digital',
+    image: '/hitlab.png',
   },
 ]
 
@@ -75,15 +77,11 @@ const faqs = [
   },
   {
     question: 'Quanto tempo leva para ficar pronto?',
-    answer: 'Uma landing page costuma levar de 2 a 4 semanas. Sistemas e projetos maiores têm cronograma definido após o levantamento do escopo.',
+    answer: 'Uma landing page costuma levar até 7 dias. Sistemas e projetos maiores têm cronograma definido após o levantamento do escopo.',
   },
   {
     question: 'Você também cuida do design?',
     answer: 'Sim. O projeto inclui a experiência, a interface e o desenvolvimento. Você não precisa coordenar profissionais diferentes para tirar a ideia do papel.',
-  },
-  {
-    question: 'Vou conseguir atualizar o site depois?',
-    answer: 'Sim. Quando o projeto pede autonomia de conteúdo, entrego uma área de gestão simples e também explico como usar tudo.',
   },
 ]
 
@@ -292,19 +290,26 @@ function App() {
                 <div className="project-tag">{project.tag}</div>
               </div>
               <div className="project-visual" aria-hidden="true">
-                <div className="visual-window">
-                  <div className="visual-bar"><i /><i /><i /></div>
-                  <div className="visual-body">
-                    <div className="visual-nav" />
-                    <div className="visual-content">
-                      <div className="visual-title" />
-                      <div className="visual-row">
-                        <div /><div /><div />
+                {project.image ? (
+                  <div className="visual-window project-browser">
+                    <div className="visual-bar"><i /><i /><i /></div>
+                    <img className="project-image" src={project.image} alt="" />
+                  </div>
+                ) : (
+                  <div className="visual-window">
+                    <div className="visual-bar"><i /><i /><i /></div>
+                    <div className="visual-body">
+                      <div className="visual-nav" />
+                      <div className="visual-content">
+                        <div className="visual-title" />
+                        <div className="visual-row">
+                          <div /><div /><div />
+                        </div>
+                        <div className="visual-panel" />
                       </div>
-                      <div className="visual-panel" />
                     </div>
                   </div>
-                </div>
+                )}
                 <span className="project-number">0{index + 1}</span>
               </div>
             </motion.article>

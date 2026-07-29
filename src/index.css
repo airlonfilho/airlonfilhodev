@@ -209,6 +209,9 @@ em { font-family: 'Playfair Display', serif; font-weight: 500; color: var(--oran
 .visual-window { width: 84%; height: 85%; background: #121213; border-radius: 15px 15px 0 0; box-shadow: 0 25px 70px rgba(0,0,0,.28); transform: translateY(18px) rotate(-1.5deg); overflow: hidden; }
 .project-light .visual-window { transform: translateY(18px) rotate(1.5deg); }
 .visual-bar { height: 35px; align-items: center; padding: 0 13px; background: #1a1a1b; }
+.project-browser { display: flex; flex-direction: column; }
+.project-browser .visual-bar { flex: 0 0 35px; }
+.project-image { width: 100%; height: calc(100% - 35px); flex: 0 0 auto; display: block; object-fit: cover; object-position: center top; }
 .visual-body { height: calc(100% - 35px); display: grid; grid-template-columns: 19% 81%; }
 .visual-nav { border-right: 1px solid #292929; }
 .visual-content { padding: 35px; }
