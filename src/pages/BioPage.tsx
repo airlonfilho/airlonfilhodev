@@ -83,9 +83,6 @@ export default function BioPage() {
           AF<span>.</span>
         </a>
         <span className="header-label"></span>
-        <a className="header-cta" href="/">
-          Ver site completo <ArrowRight size={15} />
-        </a>
       </motion.header>
 
       <div className="bio-shell" id="top">

@@ -1,16 +1,9 @@
 import { lazy, Suspense, useEffect } from 'react'
 
-const LandingPage = lazy(() => import('./pages/LandingPage'))
 const BioPage = lazy(() => import('./pages/BioPage'))
 
 const routes = {
   '/': {
-    component: LandingPage,
-    title: 'Airlon Filho — Sites e Sistemas sob medida',
-    description:
-      'Sites e sistemas sob medida para negócios que querem vender mais, automatizar processos e crescer com tecnologia.',
-  },
-  '/bio': {
     component: BioPage,
     title: 'Airlon Filho — Bio & Links',
     description: 'Links, projetos e contato de Airlon Filho.',
