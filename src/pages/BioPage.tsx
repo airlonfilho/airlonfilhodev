@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import '../styles/bio.css'
 import {
   ArrowDownRight,
-  ArrowRight,
   Code2,
   Github,
   Globe2,
